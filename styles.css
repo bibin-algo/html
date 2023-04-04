@@ -124,7 +124,8 @@ input{
 
 .result{
   position: relative;
-  top: 200px;
+  top: 80px;
+  
 }
 .generate{
   border-radius: 6px;
@@ -133,6 +134,14 @@ input{
   color: #fff;
   width: 226px;
   height: 45px;
+}
+
+.footer{
+  position: relative;
+  top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 @media (max-width: 768px) {
