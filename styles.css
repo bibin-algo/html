@@ -1,0 +1,148 @@
+
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border:none;
+  outline:none
+}
+
+.tool-bar{
+  background: #204458;
+  padding: 14px 24px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bg-box{
+  background-color: #274A5D;
+  height: 70%;
+  padding: 35px 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+@media only screen and (min-width: 920px) {
+  .bg-box::before{
+    background-color: #274A5D;
+    content: '';
+    height: 50%;
+    width: 150%;
+    position: absolute;
+    top:25%;
+    left: -25%;
+    border-radius: 100%;
+  }
+
+  .bg-box{
+    padding: 35px 232px;
+    height: 200px;
+  }
+}
+
+
+.logo{
+  font-weight: 700;
+  font-size: 20.24px;
+}
+
+.menu{
+  float: right;
+  font-size: 14px;
+}
+.menu:hover{
+  cursor: pointer;
+}
+.name{
+  font-weight: 600;
+  font-size: 24px;
+  color: #DFF6E5;
+}
+.category{
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.desc{
+  font-weight: 300;
+  position: relative;
+  top: 53px;
+  line-height: 22px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  column-gap: 40px;
+  position: relative;
+  top: 53px;
+}
+
+
+
+.label{
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+input{
+  padding: 10px 8px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.btn{
+  border: 1px solid white;
+  background-color:#5E9999;
+  color:white;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  top:30px;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #44BC98;
+  border: #44BC98;
+}
+
+.result{
+  position: relative;
+  top: 200px;
+}
+.generate{
+  border-radius: 6px;
+  padding: 2.5px;
+  background-color: #4C7993;
+  color: #fff;
+  width: 226px;
+  height: 45px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
