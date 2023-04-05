@@ -33,12 +33,23 @@ body {
 
 .bg-box{
   background-color: #274A5D;
-  height: 70%;
-  padding: 35px 20px;
+  padding: 1% 10%;
+  height: 30%;
   font-size: 14px;
   color: #fff;
 }
 
+.bg-box::before{
+  background-color: #274A5D;
+  content: '';
+  height: 80%;
+  width: 150%;
+  position: absolute;
+  top:0%;
+  left: -25%;
+  border-radius: 100%;
+  z-index: -2;
+}
 
 .logo{
   font-weight: 700;
@@ -68,16 +79,16 @@ body {
 .desc{
   font-weight: 300;
   position: relative;
-  top: 53px;
+  top: 8vh;
   line-height: 22px;
 }
 
 .grid{
   display: grid;
   grid-template-columns: 3fr 3fr 1fr;
-  column-gap: 40px;
+  column-gap: 5%;
   position: relative;
-  top: 53px;
+  top: 8vh;
 }
 
 
@@ -103,7 +114,7 @@ input{
   border-radius: 4px;
   width: 100%;
   position: relative;
-  top:30px;
+  top:5vh;
   cursor: pointer;
 }
 
@@ -125,7 +136,7 @@ input{
 
 .footer{
   position: relative;
-  top: 200px;
+  top: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,12 +145,12 @@ input{
 }
 
 .result{
-  padding: 35px 20px;
+  padding: 1% 10%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 130px;
   position: relative;
-  top: 200px;
+  top: 35vh;
 }
 
 .input{
@@ -162,42 +173,45 @@ input{
 }
 
 
-
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
+@media (max-width: 420px) {
+  .grid, .result {
     grid-template-columns: 1fr;
   }
-  .grid:not(:first-child){
-    margin-top: 8px;
+
+  .bg-box::before{
+    height: 40%;
+    width: 100%;
+    top:40%;
+    left: 0;
+    border-radius: 10%;
   }
 }
 
-@media only screen and (min-width: 920px) {
+
+@media (min-width: 421px) and (max-width: 540px){
+  .grid, .result {
+    grid-template-columns: 1fr;
+  }
+
   .bg-box::before{
-    background-color: #274A5D;
-    content: '';
     height: 50%;
-    width: 150%;
-    position: absolute;
-    top:25%;
-    left: -25%;
-    border-radius: 100%;
+    width: 100%;
+    top:40%;
+    left: 0;
+    border-radius: 10%;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 960px){
+  .grid, .result {
+    grid-template-columns: 1fr;
   }
 
-  .bg-box{
-    padding: 35px 232px;
-    height: 200px;
-  }
-
-  .result{
-    padding: 35px 232px;
-    grid-template-columns: 1fr 1fr;
+  .bg-box::before{
+    height: 50%;
+    width: 100%;
+    top:20%;
+    left: 0;
+    border-radius: 10%;
   }
 }
