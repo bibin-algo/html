@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -18,12 +22,14 @@ body {
 
 .tool-bar{
   background: #204458;
+  width: 100vw;
   padding: 14px 24px;
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 
 .bg-box{
   background-color: #274A5D;
@@ -33,24 +39,6 @@ body {
   color: #fff;
 }
 
-@media only screen and (min-width: 920px) {
-  .bg-box::before{
-    background-color: #274A5D;
-    content: '';
-    height: 50%;
-    width: 150%;
-    position: absolute;
-    top:25%;
-    left: -25%;
-    border-radius: 100%;
-  }
-
-  .bg-box{
-    padding: 35px 232px;
-    height: 200px;
-  }
-}
-
 
 .logo{
   font-weight: 700;
@@ -58,8 +46,11 @@ body {
 }
 
 .menu{
-  float: right;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-content: right;
+  flex-direction: row;
 }
 .menu:hover{
   cursor: pointer;
@@ -101,6 +92,7 @@ input{
   padding: 10px 8px;
   width: 100%;
   border-radius: 8px;
+  border: 1px solid #274A5D;
 }
 
 .btn{
@@ -112,8 +104,6 @@ input{
   width: 100%;
   position: relative;
   top:30px;
-  transition-duration: 150ms;
-  transition-timing-function: ease-out;
   cursor: pointer;
 }
 
@@ -122,11 +112,6 @@ input{
   border: #44BC98;
 }
 
-.result{
-  position: relative;
-  top: 80px;
-  
-}
 .generate{
   border-radius: 6px;
   padding: 2.5px;
@@ -134,15 +119,50 @@ input{
   color: #fff;
   width: 226px;
   height: 45px;
+  position: relative;
+  top: 40px;
 }
 
 .footer{
   position: relative;
   top: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center; 
+  padding-bottom: 120px;
 }
+
+.result{
+  padding: 35px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 130px;
+  position: relative;
+  top: 200px;
+}
+
+.input{
+  width: 100%;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+}
+
+.result-title{
+  color: #5E9999;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.result-tbl{
+  padding-bottom: 14px;
+  border-bottom: 1px solid #4C7993;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
 
 @media (max-width: 768px) {
   .grid {
@@ -153,5 +173,31 @@ input{
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .grid:not(:first-child){
+    margin-top: 8px;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .bg-box::before{
+    background-color: #274A5D;
+    content: '';
+    height: 50%;
+    width: 150%;
+    position: absolute;
+    top:25%;
+    left: -25%;
+    border-radius: 100%;
+  }
+
+  .bg-box{
+    padding: 35px 232px;
+    height: 200px;
+  }
+
+  .result{
+    padding: 35px 232px;
+    grid-template-columns: 1fr 1fr;
   }
 }
